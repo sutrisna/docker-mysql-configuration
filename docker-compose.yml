@@ -1,0 +1,26 @@
+version: 'v2.35.1'  # Sesuaikan dengan versi yang kamu pakai
+
+services:
+  mysql:
+    image: mysql:5.7 # sesuaikan image mysql di docker hub sesuai kebutuhan
+    container_name: lmu-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: lmu_admin
+      MYSQL_DATABASE: lmu_db
+      MYSQL_USER: lmu
+      MYSQL_PASSWORD: lmu_pass_db
+    ports:
+      - "3307:3306"
+    volumes:
+      - lmu-mysql-data:/var/lib/mysql
+    networks:
+      - lmu-network
+    restart: unless-stopped
+
+volumes:
+  lmu-mysql-data:
+    driver: local
+
+networks:
+  lmu-network:
+    driver: bridge
