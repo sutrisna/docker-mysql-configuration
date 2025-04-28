@@ -34,3 +34,5 @@ mysqldump -u root -p <your_DB> > <path>lmu_db_backup.sql
 sudo docker cp <ID_CONTAINER>:<lokasi path hasil backup> <path local>
 ```
 - Contoh `sudo docker cp <ID_CONTAINER>:/var/lmu_db_backup.sql /home/mylaptop`
+
+**Note env mysql pada file docker-compose.yml hanya contoh**
